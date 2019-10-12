@@ -1,0 +1,48 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/index">
+      <img src="/assets/logo.png" width="65" height="50" alt="">
+      Météa
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <% if (active === 'index') { %>
+          <li class="nav-item active">
+        <% } else { %>
+          <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/index">Accueil</a>
+        </li>
+
+        <% if (active === 'about') { %>
+          <li class="nav-item active">
+        <% } else { %>
+          <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/about">À Propos</a>
+        </li>
+      </ul>
+
+      <% if (active !== 'index') { %>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-auto">
+            <div class="input-group">
+              <input class="form-control form-control-sm" id="city-input" type="text" placeholder="Choissez une ville..." aria-label="Choissez une ville"
+                aria-describedby="button-addon">
+              <div class="input-group-append">
+                <button class="btn btn-sm btn-outline-success" type="button" id="button-addon" onclick="redirectToWeather()">
+                  <i class="fas fa-search"></i> Chercher</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% } %>
+
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+  <% include global/header.ejs %>
+  <title>Météa - À Propos</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <% include global/unsupported.ejs %>
+
+  <%- include('global/navbar.ejs', {active: 'about'}); %>
+
+  <main role="main" class="flex-shrink-0">
+    <div class="container" style="margin-top: 100px; margin-bottom: 30px;">
+      <h1 class="mt-5 text-center">À Propos</h1>
+      <hr>
+
+      <div class="text-center">
+        <p id="info">
+          "Météa" est un site indiquant la météo ainsi que des prévisions, à partir d'APIs. La principale API utilisée
+          est <a href="https://darksky.net" target="_blank">darksky.net</a>, fournissant les données météo. Pour la recherche
+          de localisation par nom ou par géolocalisation, nous utilisons l'API <a href="https://opencagedata.com" target="_blank">
+            opencagedata.com</a>. Les graphiques sont réalisés grâce à la librairie <a href="https://chartjs.org" target="_blank">ChartJS</a>,
+          et la carte est réalisée grâce à <a href="https://leafletjs.com" target="_blank">Leaflet</a>, ainsi que
+          <a href="https://thunderforest.com" target="_blank">thunderforest</a> et <a href="https://openstreetmap.org" target="_blank">
+          openstreetmap</a>, fournissant le style de carte.
+        </p>
+        <p id="github">
+          Vous pouvez trouver le code source du site sur Github : <a href="https://github.com/noftaly/metea" target="_blanc">ici</a>.
+        </p>
+        <p id="bug">
+          Si vous trouvez un bug concernant le site, n'hésitez pas a le reporter. Pour cela, cliquez <a
+            href="https://github.com/noftaly/The-Weather/issues/new" target="_blank">ici</a>, et décrivez précisemment ce que vous avez
+          fait pour avoir le bug, en ajoutant, si possible, des captures d'écran ou des médias nous permettant de comprendre comment
+          cela a pu se produire. Merci de votre aide !
+        </p>
+        <p id="suggestions">
+          Pour toutes suggestions, veuillez nous contacter par email : <a href="mailto:elliot@maisl.fr?subject=Suggestions www.URL-SITE.fr">
+          elliot@maisl.fr</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <% include global/footer.ejs %>
+</body>
+
+</html>

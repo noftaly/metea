@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+  <% include global/header.ejs %>
+  <title>Météa - Erreur...</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <% include global/unsupported.ejs %>
+
+  <%- include('global/navbar.ejs', {active: 'error'}); %>
+
+  <main role="main" class="flex-shrink-0">
+    <div class="container" style="margin-top: 100px; margin-bottom: 30px;">
+      <h1 class="mt-5 text-center">Erreur 404</h1>
+      <hr>
+
+      <p class="text-center">
+        Désolé, mais la page que vous essayer de charger est indisponible ou n'existe pas. Essayez de changer l'URL,
+        ou réessayez ultérieurement. Si vous pensez que c'est un bug, veuillez <a href="/about#bug">le reporter</a>.
+      </p>
+    </div>
+  </main>
+
+  <% include global/footer.ejs %>
+</body>
+
+</html>

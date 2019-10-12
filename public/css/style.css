@@ -1,0 +1,90 @@
+html, body {
+  height: 100%;
+}
+
+/* Links */
+a, a:hover {
+  text-decoration: none;
+}
+
+/* Symbols */
+.fa-globe-africa {
+  font-size: 16px;
+  padding: 3px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.fa-plus {
+  font-size: 9px;
+  padding: 2px;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+/* Form */
+.content {
+  display: grid;
+  place-items: center;
+}
+
+#mapid {
+  height: 200px;
+}
+
+/* Fixed Footer */
+main .container {
+  flex: 1 0 auto
+}
+
+footer {
+  flex-shrink: none;
+}
+
+/* Footer */
+footer {
+  background-color: rgb(244, 244, 244);
+  font-size: 14px;
+  flex-shrink: none;
+}
+
+footer .lead {
+  font-size: 16px;
+}
+
+/* Custom tables */
+.dark-key-customtable, .dark-symbol-customtable {
+  background-color: #343a40;
+  color: white;
+}
+
+.light-value-customtable {
+  background-color: white;
+  color: #343a40;
+}
+
+.table .corner-tl { border-top-left-radius: 10px; }
+
+.table .corner-tr { border-top-right-radius: 10px; }
+
+.table .corner-bl { border-bottom-left-radius: 10px; }
+
+.table .corner-br { border-bottom-right-radius: 10px; }
+
+/* Move carousel indicators down */
+/* .carousel-indicators {
+  bottom: -40px;
+}
+
+.carousel-indicators li {
+  padding-right: 15px;
+  padding-left: 15px;
+  text-indent: 0px;
+  text-align: center;
+  background-color:#343a40;
+} */
+
+/* Charts' canvas */
+/* canvas {
+  height: 200px;
+} */
