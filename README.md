@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://localhost:3000/">
-    <img src="public/ressources/logo.png" alt="The Weather logo">
+    <img src="public/assets/logo.png" alt="Metea logo">
   </a>
 </p>
 
@@ -30,7 +30,7 @@
 
 ## Installation
 
-Pour utiliser le site localement, vous avez besoin de clé d'APIs. Pour cela, renommez `.env.dist` en `.env`, et mettez-y vos clés d'API, comme spécifié
+Pour utiliser le site localement, vous avez besoin de clé d'APIs. Pour cela, renommez `.env.template` en `.env`, et mettez-y vos clés d'API, comme spécifié
 Ensuite, allez dans votre répertoir à partir d'un terminal, puis installez les dépendences : `npm i`, et enfin, lancez le serveur : `npm start`.
 
 ## To Do
