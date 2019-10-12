@@ -1,12 +1,12 @@
-<p align="center">
+<p style="text-align: center;">
   <a href="http://localhost:3000/">
     <img src="public/assets/logo.png" alt="Metea logo">
   </a>
 </p>
 
-<h3 align="center">Météa</h3>
+<h3 style="text-align: center;">Météa</h3>
 
-<p align="center">
+<p style="text-align: center;">
   Un site de météo moderne, basé sur des APIs
   <br>
   <a href="http://localhost:3000/"><strong>Explorer Météa »</strong></a>
