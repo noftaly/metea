@@ -35,10 +35,10 @@ Ensuite, allez dans votre répertoir à partir d'un terminal, puis installez les
 
 ## To Do
 
-- [ ] Ajouter la map
 - [ ] Ajouter les graphiques
 - [ ] Ajouter la localisation automatique
 - [ ] Ajouter plus de choses sur la page d'accueil (tempêtes, catastrophes, pics de temperatures...)
+- [x] Ajouter la map
 - [x] Faire fonctionner les inputs
 - [x] Améliorer les textes descriptifs
 - [x] Ajouter les alertes
@@ -46,4 +46,4 @@ Ensuite, allez dans votre répertoir à partir d'un terminal, puis installez les
 
 ## En cours :
 
-- Ajouter la map
+- Ajouter les graphiques

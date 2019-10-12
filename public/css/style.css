@@ -28,8 +28,9 @@ a, a:hover {
   place-items: center;
 }
 
-#mapid {
-  height: 200px;
+/* Map */
+#map {
+  height: 250px;
 }
 
 /* Fixed Footer */
@@ -70,21 +71,3 @@ footer .lead {
 .table .corner-bl { border-bottom-left-radius: 10px; }
 
 .table .corner-br { border-bottom-right-radius: 10px; }
-
-/* Move carousel indicators down */
-/* .carousel-indicators {
-  bottom: -40px;
-}
-
-.carousel-indicators li {
-  padding-right: 15px;
-  padding-left: 15px;
-  text-indent: 0px;
-  text-align: center;
-  background-color:#343a40;
-} */
-
-/* Charts' canvas */
-/* canvas {
-  height: 200px;
-} */
