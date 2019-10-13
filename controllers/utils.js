@@ -123,20 +123,6 @@ export function getImage(weatherDesc) {
     case "cloudy":
       return "Cloudy";
     default:
-      return undefined;
-  }
-}
-
-export function getFormatted(timespan) {
-  switch (timespan) {
-    case 'today':
-      return "Aujourd'hui";
-    case 'currently':
-      return "Actuellement";
-    case 'hourly':
-    case 'daily':
-      return 'SOON';
-    default:
-      return 'Inconnu';
+      return "Cloudy"; // Cloudy is always a good answer :p
   }
 }

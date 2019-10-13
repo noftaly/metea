@@ -35,8 +35,13 @@ Ensuite, allez dans votre répertoir à partir d'un terminal, puis installez les
 
 ## To Do
 
-- [ ] Ajouter la localisation automatique
 - [ ] Ajouter plus de choses sur la page d'accueil (tempêtes, catastrophes, pics de temperatures...)
+- [ ] Ajouter des thèmes (blanc/noir)
+- [ ] Ajouter une doc pour l'api
+- [ ] Ajouter un support de plusieurs langues
+- [x] Dans `weatherData`, éxecuter les 2 promesses en même temps
+- [x] Ajouter la localisation automatique
+- [x] Ajouter une API, qui renvoit des infos sur une ville, ou des des infos sur la météo
 - [x] Ajouter la map
 - [x] Ajouter les graphiques
 - [x] Faire fonctionner les inputs
@@ -46,4 +51,4 @@ Ensuite, allez dans votre répertoir à partir d'un terminal, puis installez les
 
 ## En cours :
 
-- Ajouter la localisation automatique
+- Ajouter plus de choses sur la page d'accueil (tempêtes, catastrophes, pics de temperatures...)
