@@ -1,0 +1,78 @@
+<div class="jumbotron mt-3" style="padding-top:25px; padding-bottom:50px;">
+  <div class="container">
+    <div id="carousel-<%= data.id %>" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="5000">
+          <canvas id="chart-<%= data.id %>-temperatures">Votre navigateur ne supporte pas la fonctionnalité Canvas.</canvas>
+        </div>
+        <div class="carousel-item" data-interval="5000">
+          <canvas id="chart-<%= data.id %>-uvindex">Votre navigateur ne supporte pas la fonctionnalité Canvas.</canvas>
+        </div>
+        <div class="carousel-item" data-interval="5000">
+          <canvas id="chart-<%= data.id %>-pressure">Votre navigateur ne supporte pas la fonctionnalité Canvas.</canvas>
+        </div>
+        <div class="carousel-item" data-interval="5000">
+          <canvas id="chart-<%= data.id %>-ozone">Votre navigateur ne supporte pas la fonctionnalité Canvas.</canvas>
+        </div>
+        <div class="carousel-item" data-interval="5000">
+          <canvas id="chart-<%= data.id %>-clouds">Votre navigateur ne supporte pas la fonctionnalité Canvas.</canvas>
+        </div>
+        <div class="carousel-item" data-interval="5000">
+          <canvas id="chart-<%= data.id %>-humidity">Votre navigateur ne supporte pas la fonctionnalité Canvas.</canvas>
+        </div>
+        <div class="carousel-item" data-interval="5000">
+          <canvas id="chart-<%= data.id %>-wind">Votre navigateur ne supporte pas la fonctionnalité Canvas.</canvas>
+        </div>
+      </div>
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-<%= data.id %>-indicators" data-slide-to="0" data-toggle="tooltip" title="Températures" class="active"><i style="margin-top:10px;" class="fas fa-thermometer-half"></i></li>
+        <li data-target="#carousel-<%= data.id %>-indicators" data-slide-to="1" data-toggle="tooltip" title="Index UV"><i style="margin-top:10px;" class="fas fa-sun"></i></li>
+        <li data-target="#carousel-<%= data.id %>-indicators" data-slide-to="2" data-toggle="tooltip" title="Pression atmosphérique"><i style="margin-top:10px;" class="fas fa-globe-europe"></i></li>
+        <li data-target="#carousel-<%= data.id %>-indicators" data-slide-to="3" data-toggle="tooltip" title="Ozone"><i style="margin-top:10px;" class="fas fa-smog"></i></li>
+        <li data-target="#carousel-<%= data.id %>-indicators" data-slide-to="4" data-toggle="tooltip" title="Couverture nuageuse"><i style="margin-top:10px;" class="fas fa-cloud"></i></li>
+        <li data-target="#carousel-<%= data.id %>-indicators" data-slide-to="5" data-toggle="tooltip" title="Humidité"><i style="margin-top:10px;" class="fas fa-tint"></i></li>
+        <li data-target="#carousel-<%= data.id %>-indicators" data-slide-to="6" data-toggle="tooltip" title="Vitesse du vent"><i style="margin-top:10px;" class="fab fa-cloudversify"></i></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Creating a scope for const not to be overwritten when calling this page a 2nd time
+  (() => {
+    const data = <%- JSON.stringify(data) %>;
+
+    const chartTypes = ['temperatures', 'uvindex', 'pressure', 'ozone', 'clouds', 'humidity', 'wind'];
+    for (let i = 0; i < chartTypes.length; i++) {
+      let dataset = data.chart.datasets[i];
+
+      for (let j = 0; j < dataset.length; j++) {
+        dataset[j].borderWidth = 1;
+        dataset[j].fill = false;
+        dataset[j].pointBackgroundColor = dataset[j].backgroundColor;
+        dataset[j].pointBorderColor = dataset[j].borderColor;
+        dataset[j].maxY = dataset[j].maxY ? dataset[j].maxY : Math.max(...dataset[j].data) + 1;
+      }
+
+      let ctx = document.getElementById(`chart-${data.id}-${chartTypes[i]}`).getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: data.chart.labels,
+          datasets: dataset,
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: dataset[0].beginAtZero,
+                max: dataset[0].maxY,
+                callback: value => `${value}${dataset[0].unit}`,
+              },
+            }],
+          },
+        },
+      });
+    }
+  })();
+</script>

@@ -46,11 +46,13 @@
           <% for (let i of [1, 2, 3, 6, 12, 18]) { %>
             <%- include('forecast/infobox.ejs', {data: { city: data.city, weather: data.weather.hourly.data[i], time: `Dans ${i} heure${i < 2 ? "" : "s"}` } }); %>
           <% } %>
+          <%- include('forecast/charts.ejs', {data: data.charts.hourly}); %>
         </div>
         <div class="tab-pane fade" id="nav-next-days" role="tabpanel" aria-labelledby="nav-next-days-tab">
           <% for (let i of [0, 1, 2, 3, 4, 5, 6]) { %>
             <%- include('forecast/infobox.ejs', {data: { city: data.city, weather: data.weather.daily.data[i], time: `Dans ${i + 1} jour${(i + 1) < 2 ? "" : "s"}` } }); %>
           <% } %>
+          <%- include('forecast/charts.ejs', {data: data.charts.daily}); %>
         </div>
       </div>
 

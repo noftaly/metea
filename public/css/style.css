@@ -33,6 +33,19 @@ a, a:hover {
   height: 250px;
 }
 
+/* Carousel */
+.carousel-indicators {
+  bottom: -40px;
+}
+
+.carousel-indicators li {
+  padding-right: 15px;
+  padding-left: 15px;
+  text-indent: 0px;
+  text-align: center;
+  background-color:#343a40;
+}
+
 /* Fixed Footer */
 main .container {
   flex: 1 0 auto

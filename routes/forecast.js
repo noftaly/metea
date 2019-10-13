@@ -1,5 +1,6 @@
 import cityData from '../controllers/cityData';
 import weatherData from '../controllers/weatherData';
+import chartsData from '../controllers/chartsData';
 import { getImage } from '../controllers/utils';
 import setDescription from '../controllers/setDescription';
 
@@ -12,12 +13,16 @@ router.get('/forecast', async (request, response) => {
   const data = {
     city: null,
     weather: null,
+    charts: null,
   };
   data.city = await cityData(city);
   if (!data.city) return response.status(400).render('error'); // Bad Request
 
   data.weather = await weatherData(`${data.city.coords.lat},${data.city.coords.lon}`, Math.round(Date.now() / 1000));
   if (!data.city) return response.status(500).render('error'); // Server Error
+
+  data.charts = chartsData(data.weather);
+  if (!data.charts) return response.status(500).render('error'); // Server Error
 
   // Assigning the image and creating the description
   data.weather.today.image = getImage(data.weather.today.icon);
