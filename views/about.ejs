@@ -2,13 +2,12 @@
 <html>
 
 <head>
-  <% include global/header.ejs %>
+  <%- include('global/header.ejs', {active: 'about'}) %>
   <title>Météa - À Propos</title>
 </head>
 
 <body class="d-flex flex-column h-100">
   <% include global/unsupported.ejs %>
-
   <%- include('global/navbar.ejs', {active: 'about'}); %>
 
   <main role="main" class="flex-shrink-0">

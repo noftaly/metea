@@ -2,13 +2,12 @@
 <html>
 
 <head>
-  <% include global/header.ejs %>
+  <%- include('global/header.ejs', {active: 'legals'}) %>
   <title>Météa - Mentions légales</title>
 </head>
 
 <body class="d-flex flex-column h-100">
   <% include global/unsupported.ejs %>
-
   <%- include('global/navbar.ejs', {active: 'legals'}); %>
 
   <main role="main" class="flex-shrink-0">
@@ -23,7 +22,7 @@
             href="https://www.generer-mentions-legales.com/generateur-mentions-legales.html" target="_blank">un générateur de mentions legales</a>.<br />
           Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la
           Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et
-          visiteurs du site : <a href="http://localhost:3000/" target="_blank">http://localhost:3000/</a> les informations
+          visiteurs du site : <a href="http://localhost:3000/">http://localhost:3000/</a> les informations
           suivantes :
         </p>
 
@@ -46,9 +45,9 @@
     
         <h3>2. Présentation et principe :</h3>
         <p id="2">
-          Est désigné ci-après : <strong>Météa</strong>, le site <a href="http://localhost:3000/" target="_blank">http://localhost:3000</a>.<br />
+          Est désigné ci-après : <strong>Météa</strong>, le site <a href="http://localhost:3000/">http://localhost:3000</a>.<br />
           Est désigné ci-après : <strong>Utilisateur</strong>, tout internaute se connectant et
-          utilisant le site susnommé : <a href="http://localhost:3000/" target="_blank">http://localhost:3000/</a>.<br />
+          utilisant le site susnommé : <a href="http://localhost:3000/">http://localhost:3000/</a>.<br />
           Le site <strong>http://localhost:3000/</strong><strong> </strong>regroupe un ensemble de services, dans l'état, mis à la
           disposition des utilisateurs. Il est ici précisé que ces derniers doivent rester courtois et faire preuve de bonne
           foi tant envers les autres utilisateurs qu'envers le webmaster du site Météa. Le site Météa
@@ -114,7 +113,7 @@
           l’informatique, aux fichiers et aux libertés, tout utilisateur dispose d’un droit d’accès, de rectification, de
           suppression et d’opposition aux données personnelles le concernant. Pour l’exercer, adressez votre demande à
           Météa par email : <strong><a
-              href="mailto:elliot.maisl@gmail.com?subject=Contact à partir des mentions légales via le site Météa">elliot.maisl@gmail.com</a></strong>
+            href="mailto:elliot.maisl@gmail.com?subject=Contact à partir des mentions légales via le site Météa">elliot.maisl@gmail.com</a></strong>
           ou par écrit dûment signée, accompagnée d’une copie du titre d’identité avec signature du titulaire de la pièce, en
           précisant l’adresse à laquelle la réponse doit être envoyée.
         <br /><br />

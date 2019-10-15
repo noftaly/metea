@@ -3,6 +3,7 @@ import weatherData from '../controllers/weatherData';
 import chartsData from '../controllers/chartsData';
 import { getImage } from '../controllers/utils';
 import setDescription from '../controllers/setDescription';
+import getColors from '../controllers/computeColors';
 
 const router = require('express').Router();
 
@@ -13,6 +14,7 @@ router.get('/forecast', async (request, response) => {
   const data = {
     city: null,
     weather: null,
+    colors: null,
     charts: null,
   };
   data.city = await cityData(city);
@@ -20,6 +22,8 @@ router.get('/forecast', async (request, response) => {
 
   data.weather = await weatherData(`${data.city.coords.lat},${data.city.coords.lon}`, Math.round(Date.now() / 1000));
   if (!data.weather) return response.status(500).render('error', { error: 500, message: "Désolé, mais une erreur interne est survenue dans le serveur. Il a été impossible de récuperer les données de météo." });
+
+  data.colors = getColors(data.weather);
 
   data.charts = chartsData(data.weather);
   if (!data.charts) return response.status(500).render('error', { error: 500, message: "Désolé, mais une erreur interne est survenue dans le serveur. IL a été impossible de récuperer les données des graphiques" });

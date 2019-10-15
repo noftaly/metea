@@ -16,8 +16,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public/'));
 app.use(express.json({ limit: '1mb' }));
 
-app.get('/', (_request, response) => response.redirect('index'));
-app.get('/index', (_request, response) => response.render('index'));
+app.get('/', (_request, response) => response.render('index'));
+app.get('/index', (_request, response) => response.redirect('/'));
 app.get('/about', (_request, response) => response.render('about'));
 app.get('/legals', (_request, response) => response.render('legals'));
 app.get('/forecast', forecast);

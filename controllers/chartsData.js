@@ -34,7 +34,7 @@ function processData(time, weather) {
       values.maxTemperatures.push(Math.round(w.temperatureMax || 0));
       values.minTemperatures.push(Math.round(w.temperatureMin || 0));
     } else {
-      labels.push(`${padNumber((now + i) % 24)}h00`); 
+      labels.push(`${padNumber((now + i) % 24)}h`); 
 
       values.temperatures.push(Math.round(w.temperature || 0));
     }

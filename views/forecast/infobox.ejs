@@ -38,7 +38,7 @@
             <tr id="cloud">
               <td class="text-right dark-key-customtable" style="padding-left:30px;">Nuages</td>
               <td class="text-center dark-symbol-customtable"><i class="fas fa-cloud"></i></td>
-              <td class="text-left light-value-customtable" style="padding-right:20px;">
+              <td class="text-left light-value-customtable" style="padding-right:20px; font-weight: bold; color: <%= data.colors.cloudCover %>;">
                 <%= Math.round(data.weather.cloudCover * 100) %>%</td>
             </tr>
             <tr id="ozone">
@@ -50,7 +50,7 @@
             <tr id="uvindex">
               <td class="text-right dark-key-customtable corner-bl" style="padding-left:30px;">Index UV</td>
               <td class="text-center dark-symbol-customtable"><i class="fas fa-sun"></i></td>
-              <td class="text-left light-value-customtable corner-br" style="padding-right:20px;">
+              <td class="text-left light-value-customtable corner-br" style="padding-right:20px; font-weight: bold; color: <%= data.colors.uvindex %>;">
                 <%= data.weather.uvIndex %></td>
             </tr>
           </tbody>

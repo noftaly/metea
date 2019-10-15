@@ -2,14 +2,13 @@
 <html>
 
 <head>
-  <% include global/header.ejs %>
+  <%- include('global/header.ejs', {active: 'forecast'}); %>
   <title>Météa - Prévisions pour <%= data.city.name %></title>
 </head>
 
 <body class="d-flex flex-column h-100" data-city-coords-lat="<%= data.city.coords.lat %>" data-city-coords-lon="<%= data.city.coords.lon %>"
   data-city-formatted="<%= data.city.formatted %>">
   <% include global/unsupported.ejs %>
-
   <%- include('global/navbar.ejs', {active: 'forecast'}); %>
 
   <main role="main" class="flex-shrink-0">
@@ -40,17 +39,17 @@
       </nav>
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-today" role="tabpanel" aria-labelledby="nav-today-tab">
-          <%- include('forecast/infobox.ejs', {data: { city: data.city, weather: data.weather.today, time: "Aujourd'hui" } }); %>
+          <%- include('forecast/infobox.ejs', { data: { city: data.city, weather: data.weather.today, colors: data.colors.today, time: "Aujourd'hui" } }); %>
         </div>
         <div class="tab-pane fade" id="nav-next-hours" role="tabpanel" aria-labelledby="nav-next-hours-tab">
           <% for (let i of [1, 2, 3, 6, 12, 18]) { %>
-            <%- include('forecast/infobox.ejs', {data: { city: data.city, weather: data.weather.hourly.data[i], time: `Dans ${i} heure${i < 2 ? "" : "s"}` } }); %>
+            <%- include('forecast/infobox.ejs', {data: { city: data.city, weather: data.weather.hourly.data[i], colors: data.colors.hourly[i], time: `Dans ${i} heure${i < 2 ? "" : "s"}` } }); %>
           <% } %>
           <%- include('forecast/charts.ejs', {data: data.charts.hourly}); %>
         </div>
         <div class="tab-pane fade" id="nav-next-days" role="tabpanel" aria-labelledby="nav-next-days-tab">
           <% for (let i of [0, 1, 2, 3, 4, 5, 6]) { %>
-            <%- include('forecast/infobox.ejs', {data: { city: data.city, weather: data.weather.daily.data[i], time: `Dans ${i + 1} jour${(i + 1) < 2 ? "" : "s"}` } }); %>
+            <%- include('forecast/infobox.ejs', {data: { city: data.city, weather: data.weather.daily.data[i], colors: data.colors.daily[i], time: `Dans ${i + 1} jour${(i + 1) < 2 ? "" : "s"}` } }); %>
           <% } %>
           <%- include('forecast/charts.ejs', {data: data.charts.daily}); %>
         </div>
@@ -61,21 +60,5 @@
 
   <% include global/footer.ejs %>
 </body>
-
-<script>
-  const lat = document.querySelector('body').getAttribute('data-city-coords-lat');
-  const lon = document.querySelector('body').getAttribute('data-city-coords-lon');
-
-  const map = L.map('map').setView([lat, lon], 6);
-  L.tileLayer(`https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={publicAccessToken}`, {
-    id: 'mapbox.streets',
-    publicAccessToken: 'pk.eyJ1Ijoibm9mdGFseSIsImEiOiJjang3Y3UwbTEwOGV5M3htbnFzeXo1OHZ5In0.FZ64EmSJRI_cLZhtl5yrQw',
-    maxZoom: 18,
-    attribution: '&copy; <a href="http://www.mapbox.com/about/maps">MapBox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(map);
-
-  const marker = L.marker([lat, lon]).addTo(map);
-  map.on('dblclick', e => redirectToWeather(`${e.latlng.lat},${e.latlng.lng}`));
-</script>
 
 </html>
