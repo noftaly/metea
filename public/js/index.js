@@ -1,20 +1,20 @@
 let geolocate = false;
 if ('geolocation' in navigator) {
   geolocate = navigator.geolocation.getCurrentPosition(async (pos) => {
-    const p1 = new Promise((resolve, reject) => {
+    const p1 = new Promise((resolve, _reject) => {
       const data = fetch(`/api/city?q=${pos.coords.latitude},${pos.coords.longitude}`)
-        .then(async (response) => await response.json());
+        .then(async response => await response.json());
       resolve(data);
-    }); 
-    const p2 = new Promise((resolve, reject) => {
+    });
+    const p2 = new Promise((resolve, _reject) => {
       const data = fetch(`/api/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`)
-        .then(async (response) => await response.json());
+        .then(async response => await response.json());
       resolve(data);
     });
 
     const values = await Promise.all([
-      p1.catch(error => { return error }),
-      p2.catch(error => { return error }),
+      p1.catch(error => error),
+      p2.catch(error => error),
     ]);
 
     document.getElementById('geolocation').innerHTML = `
@@ -27,7 +27,7 @@ if ('geolocation' in navigator) {
               <hr style="border-color: #666666;">
               <p class="card-text">Météo à ${values[0].name} :<br />${values[1].today.summary}</p>
               <button type="button" class="btn btn-sm btn-block btn-light stretched-link"
-                onclick="redirectToWeather('${pos.coords.latitude + `,` + pos.coords.longitude}')">Voir plus...</button>
+                onclick="redirectToWeather('${pos.coords.latitude + ',' + pos.coords.longitude}')">Voir plus...</button>
             </div>
           </div>
         </div>
@@ -38,5 +38,5 @@ if ('geolocation' in navigator) {
     return true;
   });
 } else if (!geolocate) {
-  console.warn("Geolocation not available or not usable");
+  console.warn('Geolocation not available or not usable');
 }

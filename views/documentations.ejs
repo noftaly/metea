@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('global/header.ejs', {active: 'about'}) %>
+  <title>Météa - À Propos</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <% include global/unsupported.ejs %>
+  <%- include('global/navbar.ejs', {active: 'about'}); %>
+
+  <main role="main" class="flex-shrink-0">
+    <div class="container" style="margin-top: 100px; margin-bottom: 30px;">
+      <h1 class="mt-5 text-center">Documentation</h1>
+      <hr>
+
+      <p>Bientôt...</p>
+    </div>
+  </main>
+
+  <% include global/footer.ejs %>
+</body>
+
+</html>

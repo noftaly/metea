@@ -21,12 +21,12 @@ router.get('/forecast', async (request, response) => {
   if (!data.city) return response.status(400).render('error', { error: 404, message: "Désolé, mais la page que vous essayer de charger est indisponible ou n'existe pas. Essayez de changer l'URL, ou réessayez ultérieurement." });
 
   data.weather = await weatherData(`${data.city.coords.lat},${data.city.coords.lon}`, Math.round(Date.now() / 1000));
-  if (!data.weather) return response.status(500).render('error', { error: 500, message: "Désolé, mais une erreur interne est survenue dans le serveur. Il a été impossible de récuperer les données de météo." });
+  if (!data.weather) return response.status(500).render('error', { error: 500, message: 'Désolé, mais une erreur interne est survenue dans le serveur. Il a été impossible de récuperer les données de météo.' });
 
   data.colors = getColors(data.weather);
 
   data.charts = chartsData(data.weather);
-  if (!data.charts) return response.status(500).render('error', { error: 500, message: "Désolé, mais une erreur interne est survenue dans le serveur. IL a été impossible de récuperer les données des graphiques" });
+  if (!data.charts) return response.status(500).render('error', { error: 500, message: 'Désolé, mais une erreur interne est survenue dans le serveur. IL a été impossible de récuperer les données des graphiques' });
 
   // Assigning the image and creating the description
   data.weather.today.image = getImage(data.weather.today.icon);

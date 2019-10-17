@@ -1,3 +1,18 @@
+function getCloudcoverColor(value) {
+  if (value < 0.3) return '#14B2D0';
+  else if (value < 0.5) return '#78AAB2';
+  else if (value < 0.8) return '#9AB5B9';
+  return '#979899';
+}
+
+function getUvindexColor(value) {
+  if (value < 3) return '#2ecc71';
+  else if (value < 6) return '#f1c40f';
+  else if (value < 8) return '#e67e22';
+  else if (value < 11) return '#e74c3c';
+  return '#9b59b6';
+}
+
 export default function getColors(weather) {
   const data = {
     today: {},
@@ -21,19 +36,4 @@ export default function getColors(weather) {
   }
 
   return data;
-}
-
-function getCloudcoverColor(value) {
-  if (value < 0.3) return '#14B2D0';
-  else if (value < 0.5) return '#78AAB2';
-  else if (value < 0.8) return '#9AB5B9';
-  else return '#979899';
-}
-
-function getUvindexColor(value) {
-  if (value < 3) return '#2ecc71';
-  else if (value < 6) return '#f1c40f';
-  else if (value < 8) return '#e67e22';
-  else if (value < 11) return '#e74c3c';
-  else return "#9b59b6"
 }
