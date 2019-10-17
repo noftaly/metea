@@ -1,5 +1,3 @@
-import redirectToWeather from './main';
-
 const lat = document.querySelector('body').getAttribute('data-city-coords-lat');
 const lon = document.querySelector('body').getAttribute('data-city-coords-lon');
 
@@ -12,4 +10,4 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(map);
 
 L.marker([lat, lon]).addTo(map);
-map.on('dblclick', event => redirectToWeather(`${event.latlng.lat},${event.latlng.lng}`));
+map.on('dblclick', event => redirectToWeather(`${event.latlng.lat},${event.latlng.lng}`)); // eslint-disable-line no-undef

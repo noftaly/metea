@@ -23,7 +23,7 @@ app.get('/legals', (_request, response) => response.render('legals'));
 app.get('/forecast', forecast);
 app.use('/api', api);
 app.use('/api/documentations', (_request, response) => response.render('documentations'));
-app.use('/api/docs', (_request, response) => response.redirect('/documentations'));
+app.use('/api/docs', (_request, response) => response.redirect('/api/documentations'));
 
 app.get('/source', (_request, response) => response.redirect('https://github.com/noftaly/metea'));
 
