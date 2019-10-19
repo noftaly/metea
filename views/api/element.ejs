@@ -1,9 +1,9 @@
-<div class="jumbotron py-4">
+<div class="jumbotron py-4 mb-5">
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
         <div>
-          <h3><%= data.title %></h3>
+          <h3><%= data.title %> <span class="badge badge-primary"><%= data.requestType %></span></h3>
           <p><%- data.description%></p>
 
           <small class="text-muted">URL complet :</small>
@@ -29,7 +29,7 @@
       </div>
       <div class="col-lg-6">
         <nav>
-          <div class="nav nav-pills" id="nav-tab" role="tablist">
+          <div class="nav nav-pills" id="nav-tab-langs" role="tablist">
             <a class="nav-item nav-link active" id="code-<%= identifier %>-js-tab" data-toggle="tab" href="#code-<%= identifier %>-js"
               role="tab" aria-controls="code-<%= identifier %>-js" aria-selected="true">Node JS</a>
             <a class="nav-item nav-link" id="code-<%= identifier %>-php-tab" data-toggle="tab" href="#code-<%= identifier %>-php"

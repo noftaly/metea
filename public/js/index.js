@@ -18,9 +18,9 @@ if ('geolocation' in navigator) {
     ]);
 
     document.getElementById('geolocation').innerHTML = `
-      <div class="row mt-5">
+      <div class="row mt-5 mb-5">
         <div class="col-auto">
-          <div class="card text-white bg-dark mb-3 text-center" style="width: 18rem;">
+          <div class="card text-white bg-dark text-center">
             <div class="card-body">
               <h5 class="card-title">${values[0].name}</h5>
               <h6 class="card-subtitle mb-2 text-muted">${values[0].formatted}</h6>

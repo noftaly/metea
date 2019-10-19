@@ -28,7 +28,21 @@ a, a:hover {
   place-items: center;
 }
 
+/* Cards */
+.card {
+  width: 18rem;
+  border-radius: 15px !important;
+}
+
+.card .btn {
+  border-radius: 10px;
+}
+
 /* Documentation */
+#nav-tab-langs .nav-item {
+  border-radius: 50px !important;
+}
+
 .nav-pills .active {
   background-color: rgb(210, 210, 210) !important;
 }
