@@ -2,12 +2,12 @@ let geolocate = false;
 if ('geolocation' in navigator) {
   geolocate = navigator.geolocation.getCurrentPosition(async (pos) => {
     const p1 = new Promise((resolve, _reject) => {
-      const data = fetch(`/api/city?q=${pos.coords.latitude},${pos.coords.longitude}`)
+      const data = fetch(`/api/v1/city?q=${pos.coords.latitude},${pos.coords.longitude}`)
         .then(async response => await response.json());
       resolve(data);
     });
     const p2 = new Promise((resolve, _reject) => {
-      const data = fetch(`/api/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`)
+      const data = fetch(`/api/v1/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`)
         .then(async response => await response.json());
       resolve(data);
     });

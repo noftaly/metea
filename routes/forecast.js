@@ -1,3 +1,4 @@
+import express from 'express';
 import cityData from '../controllers/cityData';
 import weatherData from '../controllers/weatherData';
 import chartsData from '../controllers/chartsData';
@@ -5,7 +6,7 @@ import { getImage } from '../controllers/utils';
 import setDescription from '../controllers/setDescription';
 import getColors from '../controllers/computeColors';
 
-const router = require('express').Router();
+const router = express.Router();
 
 router.get('/forecast', async (request, response) => {
   if (!request.query.city) return response.status(200).redirect('index'); // OK

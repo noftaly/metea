@@ -11,20 +11,18 @@
   <%- include('global/navbar.ejs', {active: 'index'}); %>
 
   <main role="main" class="flex-shrink-0">
-    <div class="container text-center" style="margin-top: 100px; margin-bottom: 30px;">
+    <div class="container text-center">
       <h1 class="mt-5">Météa</h1>
       <hr>
 
       <div class="content" style="margin-top: 10%;">
-        <div class="row">
-          <div class="col-auto">
-            <div class="input-group shadow">
-              <input class="form-control" id="city-input" type="text" placeholder="Choissez une ville..." aria-label="Choissez une ville"
-                aria-describedby="button-addon">
-              <div class="input-group-append">
-                <button class="btn btn-outline-success" type="button" id="button-addon" onclick="redirectToWeather()">
-                  <i class="fas fa-search"></i> Chercher</button>
-              </div>
+        <div class="mx-auto">
+          <div class="input-group shadow">
+            <input class="form-control" id="city-input" type="text" placeholder="Choissez une ville..." aria-label="Choissez une ville"
+              aria-describedby="button-addon">
+            <div class="input-group-append">
+              <button class="btn btn-outline-success" type="button" id="button-addon" onclick="redirectToWeather()">
+                <i class="fas fa-search"></i> Chercher</button>
             </div>
           </div>
         </div>

@@ -11,12 +11,12 @@
   <%- include('global/navbar.ejs', {active: 'error'}); %>
 
   <main role="main" class="flex-shrink-0">
-    <div class="container" style="margin-top: 100px; margin-bottom: 30px;">
+    <div class="container">
       <h1 class="mt-5 text-center">Erreur...</h1>
       <hr>
 
       <div class="alert alert-danger" role="alert">
-        <h4 class="alert-heading">Error <%= error %></h4>
+        <h4 class="alert-heading">Erreur <%= error %></h4>
         <p><%= message %></p>
         <hr>
         <p class="mb-0">Vous pouvez reporter les bugs <a href="/about#bug">ici</a>, si vous pensez que s'en ait un, ou qu'il se répète.</p>

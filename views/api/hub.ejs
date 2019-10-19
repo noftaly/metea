@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('../global/header.ejs', {active: 'api'}) %>
+  <title>Météa - À Propos</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <% include ../global/unsupported.ejs %>
+  <%- include('../global/navbar.ejs', {active: 'api'}); %>
+
+  <main role="main" class="flex-shrink-0">
+    <div class="container">
+      <h1 class="mt-5 text-center">API</h1>
+      <hr>
+
+      <div class="card border-warning shadow rounded mx-auto" style="width: 18rem;">
+        <h5 class="card-header">Version 1</h5>
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Dernière version</h6>
+          <p class="card-text">Documentation de la version 1 de l'api.</p>
+          <a href="/api/v1/documentation" class="btn btn-primary">Visiter la doc</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <% include ../global/footer.ejs %>
+</body>
+
+</html>
