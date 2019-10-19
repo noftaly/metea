@@ -28,6 +28,29 @@ a, a:hover {
   place-items: center;
 }
 
+/* Documentation */
+.nav-pills .active {
+  background-color: rgb(210, 210, 210) !important;
+}
+
+.nav-pills .nav-link,
+.nav-pills .nav-link .active {
+  color: #343a40 !important;
+}
+
+code {
+  color: #669ac2;
+}
+
+pre[class*="language-"].line-numbers {
+  padding-left: 3em !important;
+}
+
+a .toggle-collapse,
+code {
+  text-decoration: none !important;
+}
+
 /* Map */
 #map {
   height: 250px;

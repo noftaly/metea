@@ -30,5 +30,4 @@ app.use(apiDoc);
 app.use(apiCity);
 app.use(apiWeather);
 
-
 app.get('*', (_request, response) => response.render('error', { error: 404, message: "Désolé, mais la page que vous essayer de charger est indisponible ou n'existe pas. Essayez de changer l'URL, ou réessayez ultérieurement." }));
