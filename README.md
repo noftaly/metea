@@ -35,12 +35,12 @@ Ensuite, allez dans votre répertoir à partir d'un terminal, puis installez les
 
 ## To Do
 
-- [ ] Ajouter une doc pour l'api
 - [ ] Ajouter un support de plusieurs langues
 - [ ] Ajouter des thèmes (blanc/noir)
-- [ ] Ajouter du lazy-load sur les images ([tutoriel](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/))
+- [ ] Ajouter du lazy-load sur les images ([lien du tutoriel](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/))
 - [ ] Ajouter plus de choses sur la page d'accueil (tempêtes, catastrophes, pics de temperatures...)
 - [ ] Réarranger les routers de l'api
+- [x] Ajouter une doc pour l'api
 - [x] Ajouter un linter
 - [x] Dans `weatherData`, éxecuter les 2 promesses en même temps
 - [x] Ajouter la localisation automatique
@@ -54,4 +54,4 @@ Ensuite, allez dans votre répertoir à partir d'un terminal, puis installez les
 
 ## En cours :
 
-- Ajout d'un doc pour l'API
+- Rien pour le moment
