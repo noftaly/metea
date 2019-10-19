@@ -3,4 +3,4 @@ function redirectToWeather(pos) {
   window.location.href = `/forecast?city=${pos}`;
 }
 
-window.addEventListener('keyup', e => (e.keyCode === 13 ? redirectToWeather() : null));
+document.getElementById('city-input').addEventListener('keyup', event => (event.keyCode === 13 ? redirectToWeather() : null));

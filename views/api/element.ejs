@@ -1,7 +1,7 @@
 <div class="jumbotron py-4 mb-5">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-xl-7">
         <div>
           <h3><%= data.title %> <span class="badge badge-primary"><%= data.requestType %></span></h3>
           <p><%- data.description%></p>
@@ -16,7 +16,12 @@
             <small class="text-muted">Exemple d'URL :</small>
           <% } %>
           <br />
-          <code><%= data.urls.examples.join('\n') %></code>
+          <code>
+            <% for (const ex of data.urls.examples) { %>
+              <%= ex %>
+              <br />
+            <% } %>
+          </code>
         </div>
         <div class="mt-2">
           <strong>Paramètres :</strong>
@@ -27,7 +32,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-lg-6">
+      <div class="col-xl-5">
         <nav>
           <div class="nav nav-pills" id="nav-tab-langs" role="tablist">
             <a class="nav-item nav-link active" id="code-<%= identifier %>-js-tab" data-toggle="tab" href="#code-<%= identifier %>-js"
