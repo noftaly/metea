@@ -1,15 +1,15 @@
 <p align="center">
   <a href="http://localhost:3000/">
-    <img src="public/assets/logo.png" alt="Metea logo">
+    <img src="public/assets/logo.png" alt="Metealy logo">
   </a>
 </p>
 
-<h3 align="center">Météa</h3>
+<h3 align="center">Météaly</h3>
 
 <p align="center">
   Un site de météo moderne, basé sur des APIs
   <br>
-  <a href="http://localhost:3000/"><strong>Explorer Météa »</strong></a>
+  <a href="http://localhost:3000/"><strong>Explorer Météaly »</strong></a>
   <br>
   <br>
   <a href="https://github.com/noftaly/SOON/issues/new?template=bug.md">Reporter un bug</a>
@@ -22,7 +22,7 @@
 ## Description
 
 <p id="about">
-  "Météa" est un site indiquant la météo ainsi que des prévisions, à partir d'APIs. La principale API utilisée
+  "Météaly" est un site indiquant la météo ainsi que des prévisions, à partir d'APIs. La principale API utilisée
   est <a href="https://darksky.net" target="_blank">darksky.net</a>. Pour la recherche de localisation par nom ou
   par géolocalisation, nous utilisons l'API <a href="https://opencagedata.com"
     target="_blank">opencagedata.com</a>. Les graphiques sont réalisés grâce à la librairie ChartJS.<br />
