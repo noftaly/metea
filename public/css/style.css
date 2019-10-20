@@ -1,5 +1,21 @@
+:root {
+  --main-color: #b5dfff;
+  --inline-code-color: #669ac2;
+  --lang-pills-color: #d2d2d2;
+  --dark-color: #343a40;
+  --gradient-start-doc-elements: #e3e2e2;
+  --gradient-end-doc-elements: #ffffff;
+  --footer-color: #f4f4f4;
+  --table-light-color: #ffffff;
+}
+
 html, body {
   height: 100%;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--main-color);
 }
 
 /* Links */
@@ -28,6 +44,11 @@ a, a:hover {
   place-items: center;
 }
 
+/* Index page */
+#index-content {
+  margin-top: 10%;
+}
+
 /* Cards */
 .card {
   width: 18rem;
@@ -38,22 +59,30 @@ a, a:hover {
   border-radius: 10px;
 }
 
+#geolocation-card {
+  background-color: var(--main-color);
+}
+
+#geolocation-card hr {
+  border-color: var(--dark-color);
+}
+
 /* Documentation */
 #nav-tab-langs .nav-item {
   border-radius: 50px !important;
 }
 
 #nav-tab-langs .active {
-  background-color: #d2d2d2 !important;
+  background-color: var(--lang-pills-color) !important;
 }
 
 .nav-pills .nav-link,
 .nav-pills .nav-link .active {
-  color: #343a40 !important;
+  color: var(--dark-color) !important;
 }
 
 #doc-menu-tab .active {
-  background: linear-gradient(0.25turn, #e3e2e2, #ffffff);
+  background: linear-gradient(0.25turn, var(--gradient-start-doc-elements), var(--gradient-end-doc-elements));
 }
 
 #doc-search {
@@ -61,7 +90,7 @@ a, a:hover {
 }
 
 code {
-  color: #669ac2;
+  color: var(--inline-code-color);
 }
 
 pre[class*="language-"].line-numbers {
@@ -71,6 +100,12 @@ pre[class*="language-"].line-numbers {
 a .toggle-collapse,
 code {
   text-decoration: none !important;
+}
+
+/* Weather-image */
+.weather-image {
+  width: 100px;
+  height: 65px;
 }
 
 /* Map */
@@ -88,7 +123,7 @@ code {
   padding-left: 15px;
   text-indent: 0px;
   text-align: center;
-  background-color: #343a40;
+  background-color: var(--dark-color);
 }
 
 /* Fixed Footer */
@@ -102,7 +137,7 @@ footer {
 
 /* Footer */
 footer {
-  background-color: #f4f4f4;
+  background-color: var(--footer-color);
   font-size: 14px;
   flex-shrink: none;
 }
@@ -113,13 +148,18 @@ footer .lead {
 
 /* Custom tables */
 .dark-key-customtable, .dark-symbol-customtable {
-  background-color: #343a40;
-  color: white;
+  background-color: var(--dark-color);
+  color: var(--table-light-color);
+}
+
+.dark-key-customtable {
+  padding-left: 30px;
 }
 
 .light-value-customtable {
   background-color: white;
-  color: #343a40;
+  color: var(--dark-color);
+  padding-right: 20px;
 }
 
 .table .corner-tl { border-top-left-radius: 10px; }

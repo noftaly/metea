@@ -1,13 +1,13 @@
-<div class="jumbotron mt-3" style="padding-top:25px; padding-bottom:25px;">
+<div class="jumbotron mt-3 py-4">
   <div class="container">
-    <div class="row">
-      <div class="col-sm">
+    <div class="row justify-content-between">
+      <div class="col-auto">
         <h3><i class="far fa-clock"></i> <%= data.time %></h3>
         <p class="lead"><i class="fas fa-map-marker-alt"></i> <%= data.city.name %></p>
       </div>
       <% if (data.weather.icon) { %>
-        <div class="col-sm">
-          <img src="/assets/weather-icons/<%= data.weather.image %>.png" class="float-right" style="width: 100px; height: 65px;"
+        <div class="col-auto">
+          <img src="/assets/weather-icons/<%= data.weather.image %>.png" class="weather-image"
             alt="<%= data.weather.icon %>">
         </div>
       <% } %>
@@ -18,39 +18,39 @@
         <table class="table table-sm table-borderless">
           <tbody>
             <tr id="humidity">
-              <td class="text-right dark-key-customtable corner-tl" style="padding-left:30px;">Humidité</td>
+              <td class="text-right dark-key-customtable corner-tl" >Humidité</td>
               <td class="text-center dark-symbol-customtable"><i class="fas fa-tint"></i></td>
-              <td class="text-left light-value-customtable corner-tr" style="padding-right:20px;">
+              <td class="text-left light-value-customtable corner-tr" >
                 <%= Math.round(data.weather.humidity * 100) %>%</td>
             </tr>
             <tr id="pressure">
-              <td class="text-right dark-key-customtable" style="padding-left:30px;">Pression</td>
+              <td class="text-right dark-key-customtable" >Pression</td>
               <td class="text-center dark-symbol-customtable"><i class="fas fa-globe-africa"></i></td>
-              <td class="text-left light-value-customtable" style="padding-right:20px;">
+              <td class="text-left light-value-customtable" >
                 <%= Math.round(data.weather.pressure) %>hPa</td>
             </tr>
             <tr id="dewpoint">
-              <td class="text-right dark-key-customtable" style="padding-left:30px;">Point de rosée</td>
+              <td class="text-right dark-key-customtable" >Point de rosée</td>
               <td class="text-center dark-symbol-customtable"><i class="fas fa-tint"></i>&deg;</td>
-              <td class="text-left light-value-customtable" style="padding-right:20px;">
+              <td class="text-left light-value-customtable" >
                 <%= Math.round(data.weather.dewPoint) %>°C</td>
             </tr>
             <tr id="cloud">
-              <td class="text-right dark-key-customtable" style="padding-left:30px;">Nuages</td>
+              <td class="text-right dark-key-customtable" >Nuages</td>
               <td class="text-center dark-symbol-customtable"><i class="fas fa-cloud"></i></td>
-              <td class="text-left light-value-customtable" style="padding-right:20px; font-weight: bold; color: <%= data.colors.cloudCover %>;">
+              <td class="text-left light-value-customtable" style="font-weight: bold; color: <%= data.colors.cloudCover %>;">
                 <%= Math.round(data.weather.cloudCover * 100) %>%</td>
             </tr>
             <tr id="ozone">
-              <td class="text-right dark-key-customtable" style="padding-left:30px;">Ozone</td>
+              <td class="text-right dark-key-customtable" >Ozone</td>
               <td class="text-center dark-symbol-customtable"><i class="fas fa-smog"></i></td>
-              <td class="text-left light-value-customtable" style="padding-right:20px;">
+              <td class="text-left light-value-customtable" >
                 <%= Math.round(data.weather.ozone) %>DU</td>
             </tr>
             <tr id="uvindex">
-              <td class="text-right dark-key-customtable corner-bl" style="padding-left:30px;">Index UV</td>
+              <td class="text-right dark-key-customtable corner-bl" >Index UV</td>
               <td class="text-center dark-symbol-customtable"><i class="fas fa-sun"></i></td>
-              <td class="text-left light-value-customtable corner-br" style="padding-right:20px; font-weight: bold; color: <%= data.colors.uvindex %>;">
+              <td class="text-left light-value-customtable corner-br" style="font-weight: bold; color: <%= data.colors.uvindex %>;">
                 <%= data.weather.uvIndex %></td>
             </tr>
           </tbody>

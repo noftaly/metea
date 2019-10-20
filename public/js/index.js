@@ -20,11 +20,11 @@ if ('geolocation' in navigator) {
     document.getElementById('geolocation').innerHTML = `
       <div class="row mt-5 mb-5">
         <div class="col-auto">
-          <div class="card text-white bg-dark text-center">
+          <div class="card text-dark text-center" id="geolocation-card">
             <div class="card-body">
               <h5 class="card-title">${values[0].name}</h5>
               <h6 class="card-subtitle mb-2 text-muted">${values[0].formatted}</h6>
-              <hr style="border-color: #666666;">
+              <hr>
               <p class="card-text">Météo à ${values[0].name} :<br />${values[1].today.summary}</p>
               <button type="button" class="btn btn-sm btn-block btn-light stretched-link"
                 onclick="redirectToWeather('${pos.coords.latitude + ',' + pos.coords.longitude}')">Voir plus...</button>
