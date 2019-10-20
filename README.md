@@ -12,9 +12,9 @@
   <a href="http://localhost:3000/"><strong>Explorer Météaly »</strong></a>
   <br>
   <br>
-  <a href="https://github.com/noftaly/SOON/issues/new?template=bug.md">Reporter un bug</a>
+  <a href="https://github.com/noftaly/metealy/issues/new?template=bug.md">Reporter un bug</a>
   ·
-  <a href="https://github.com/noftaly/SOON/issues/new?template=feature.md&labels=feature">Suggérer une fonctionnalité</a>
+  <a href="https://github.com/noftaly/metealy/issues/new?template=feature.md&labels=feature">Suggérer une fonctionnalité</a>
   ·
   <a href="https://discord.gg/">Discord</a>
 </p>

@@ -23,7 +23,7 @@ app.get('/', (_request, response) => response.render('index'));
 app.get('/index', (_request, response) => response.redirect('/'));
 app.get('/about', (_request, response) => response.render('about'));
 app.get('/legals', (_request, response) => response.render('legals'));
-app.get('/source', (_request, response) => response.redirect('https://github.com/noftaly/metea'));
+app.get('/source', (_request, response) => response.redirect('https://github.com/noftaly/metealy'));
 app.get('/forecast', forecast);
 app.use(apiBase);
 app.use(apiDoc);
