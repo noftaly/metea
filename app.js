@@ -11,10 +11,11 @@ export const apikeys = {
   darksky: process.env.DARKSKY_API,           // https://darksky.net (weather data)
   opencagedata: process.env.OPENCAGEDATA_API, // https://opencagedata.com (localisation/geocoding/reverse geocoding)
 };
+export const port = process.env.PORT || 3000;
 
 const app = express();
 
-app.listen(3000, () => console.log('Listening at port 3000!'));
+app.listen(port, () => console.log(`Listening at port ${port}!`));
 app.set('views', './views');
 app.set('view engine', 'ejs');
 app.use(express.static('public/'));
@@ -22,7 +23,7 @@ app.use(express.static('public/'));
 app.get('/', (_request, response) => response.render('index'));
 app.get('/index', (_request, response) => response.redirect('/'));
 app.get('/about', (_request, response) => response.render('about'));
-app.get('/legals', (_request, response) => response.render('legals'));
+app.get('/legals', (_request, response) => response.render('legals', { port }));
 app.get('/source', (_request, response) => response.redirect('https://github.com/noftaly/metealy'));
 app.get('/forecast', forecast);
 app.use(apiBase);
