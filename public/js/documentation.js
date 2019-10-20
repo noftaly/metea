@@ -2,6 +2,7 @@ Prism.plugins.NormalizeWhitespace.setDefaults({
   'remove-initial-line-feed': true,
 });
 
+
 function filterElements() {
   const search = document.getElementById('doc-search').value.toUpperCase();
   const elements = document.getElementById('doc-menu-tab').getElementsByTagName('a');
@@ -14,3 +15,5 @@ function filterElements() {
     }
   }
 }
+
+document.getElementById('doc-search').addEventListener('keyup', () => filterElements());
