@@ -37,6 +37,8 @@
           <div class="nav nav-pills" id="nav-tab-langs" role="tablist">
             <a class="nav-item nav-link active" id="code-<%= identifier %>-js-tab" data-toggle="tab" href="#code-<%= identifier %>-js"
               role="tab" aria-controls="code-<%= identifier %>-js" aria-selected="true">Node JS</a>
+            <a class="nav-item nav-link" id="code-<%= identifier %>-jq-tab" data-toggle="tab" href="#code-<%= identifier %>-jq"
+              role="tab" aria-controls="code-<%= identifier %>-jq" aria-selected="true">jQuery</a>
             <a class="nav-item nav-link" id="code-<%= identifier %>-php-tab" data-toggle="tab" href="#code-<%= identifier %>-php"
               role="tab" aria-controls="code-<%= identifier %>-php" aria-selected="true">PHP</a>
             <a class="nav-item nav-link" id="code-<%= identifier %>-py-tab" data-toggle="tab" href="#code-<%= identifier %>-py" role="tab"
@@ -55,6 +57,16 @@ import axios from 'axios';
 axios('<%= data.urls.examples[0] %>')
   .then(response => console.log(response))
   .catch(err => console.error(err));
+</code>
+              </pre>
+          </div>
+          <div class="tab-pane" id="code-<%= identifier %>-jq" role="tabpanel" aria-labelledby="code-<%= identifier %>-jq-tab">
+            <pre class="rounded">
+<code class="language-js line-numbers">
+$.get( "<%= data.urls.examples[0] %>",
+  function( data ) {
+    console.log( data );
+  }, "json" );
 </code>
               </pre>
           </div>

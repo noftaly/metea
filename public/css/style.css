@@ -11,7 +11,7 @@ a, a:hover {
 .fa-globe-africa {
   font-size: 16px;
   padding: 3px;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
   border-radius: 50%;
 }
 
@@ -43,13 +43,21 @@ a, a:hover {
   border-radius: 50px !important;
 }
 
-.nav-pills .active {
-  background-color: rgb(210, 210, 210) !important;
+#nav-tab-langs .active {
+  background-color: #d2d2d2 !important;
 }
 
 .nav-pills .nav-link,
 .nav-pills .nav-link .active {
   color: #343a40 !important;
+}
+
+#doc-menu-tab .active {
+  background: linear-gradient(0.25turn, #e3e2e2, #ffffff);
+}
+
+#doc-search {
+  border-radius: 10px;
 }
 
 code {
@@ -80,7 +88,7 @@ code {
   padding-left: 15px;
   text-indent: 0px;
   text-align: center;
-  background-color:#343a40;
+  background-color: #343a40;
 }
 
 /* Fixed Footer */
@@ -94,7 +102,7 @@ footer {
 
 /* Footer */
 footer {
-  background-color: rgb(244, 244, 244);
+  background-color: #f4f4f4;
   font-size: 14px;
   flex-shrink: none;
 }
